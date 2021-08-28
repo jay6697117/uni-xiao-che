@@ -1,6 +1,7 @@
 <template>
   <view class="mine">
-    <h1>我的页面</h1>
+    <button @click="goHome">goList</button>
+    <navigator url="/pages/list/index?id=1&name=mine1">去列表</navigator>
   </view>
 </template>
 
@@ -10,8 +11,19 @@ export default {
   data() {
     return {};
   },
-  methods: {}
+  methods: {
+    goHome() {
+      console.log('goHome run～～～');
+      uni.navigateTo({
+        url: '/pages/list/index?id=2&name=mine2'
+      });
+    }
+  }
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.mine {
+  padding: 0 32rpx;
+}
+</style>

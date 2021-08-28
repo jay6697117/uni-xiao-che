@@ -20,6 +20,5 @@ export default {
 /*每个页面公共css */
 page {
   background: #f1f1f1;
-  padding: 0 32rpx;
 }
 </style>

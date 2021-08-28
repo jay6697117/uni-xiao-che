@@ -1,6 +1,0 @@
-{
-  "navigationBarTitleText": "首页",
-  "usingComponents": {
-    "xc-cart": "/components/xc-cart/xc-cart"
-  }
-}

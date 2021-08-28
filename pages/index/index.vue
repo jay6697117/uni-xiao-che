@@ -8,7 +8,7 @@
     <view>key1: {{ $store.state.key1 }}</view>
     <view>key1Getter: {{ $store.getters.key1Getter }}</view>
     <view class="shop-cart">
-      <xc-cart v-for="cartInfo in cartInfos" :cartInfo="cartInfo"></xc-cart>
+      <xc-cart v-for="cartInfo in cartInfos" :key="cartInfo.id" :cartInfo="cartInfo"></xc-cart>
     </view>
   </view>
 </template>
@@ -21,6 +21,7 @@ export default {
       globalDataStr: JSON.stringify(getApp().globalData),
       cartInfos: [
         {
+          id: '1',
           imgSrc:
             'http://gw.alicdn.com/bao/uploaded/i3/1917047079/O1CN01VlEDD522AEJzpw3A5_!!2-item_pic.png_360x10000.jpg',
           title: 'Apple/苹果 iPhone 11 Pro 666',
@@ -28,6 +29,7 @@ export default {
           marketPrice: '8666.00'
         },
         {
+          id: '2',
           imgSrc:
             'http://gw.alicdn.com/bao/uploaded/i3/1917047079/O1CN01VlEDD522AEJzpw3A5_!!2-item_pic.png_360x10000.jpg',
           title: 'Apple/苹果 iPhone 11 Pro 666',
@@ -35,6 +37,7 @@ export default {
           marketPrice: '8666.00'
         },
         {
+          id: '3',
           imgSrc:
             'http://gw.alicdn.com/bao/uploaded/i3/1917047079/O1CN01VlEDD522AEJzpw3A5_!!2-item_pic.png_360x10000.jpg',
           title: 'Apple/苹果 iPhone 11 Pro 666',
@@ -42,6 +45,7 @@ export default {
           marketPrice: '8666.00'
         },
         {
+          id: '4',
           imgSrc:
             'http://gw.alicdn.com/bao/uploaded/i3/1917047079/O1CN01VlEDD522AEJzpw3A5_!!2-item_pic.png_360x10000.jpg',
           title: 'Apple/苹果 iPhone 11 Pro 666',
@@ -74,10 +78,11 @@ export default {
 
 <style lang="scss" scoped>
 .content {
+  padding: 0 32rpx;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
 
   .logo {
     height: 200rpx;
@@ -100,8 +105,8 @@ export default {
 
   .shop-cart {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-content: flex-start;
     margin-top: 30rpx;
