@@ -1,11 +1,10 @@
 /.DS_Store
 /.hbuilderx
+
 node_modules
 dist
 unpackage
-node_modules/*
-dist/*
-unpackage/*
+
 /node_modules
 /dist
 /unpackage
