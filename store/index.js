@@ -17,8 +17,8 @@ const store = new Vuex.Store({
     addKey1(state) {
       state.key1 += 1;
     },
-    login(state) {
-      state.isLogin = true;
+    login(state, isLogin) {
+      state.isLogin = isLogin;
     }
   }
 });

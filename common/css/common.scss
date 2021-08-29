@@ -1,21 +1,20 @@
-/* #ifdef MP-WEIXIN */
-// page {
-//   background: lightpink;
-// }
-/* #endif */
-
-
-/* #ifndef MP-WEIXIN */
-// page {
-//   background:lightskyblue;
-// }
-/* #endif */
-
-/*
 page {
+  box-sizing: border-box;
+  padding: 0 32rpx;
   background: $custom-bg-color;
 }
-*/
+
+/* #ifdef MP-WEIXIN */
+page {
+  background: lightpink;
+}
+/* #endif */
+
+/* #ifdef H5 */
+page {
+  background: lightskyblue;
+}
+/* #endif */
 
 navigator {
   display: inline-block;

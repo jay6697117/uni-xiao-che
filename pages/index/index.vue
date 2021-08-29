@@ -93,7 +93,6 @@ export default {
 
 <style lang="scss" scoped>
 .content {
-  padding: 0 32rpx;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
