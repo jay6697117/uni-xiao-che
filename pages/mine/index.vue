@@ -3,6 +3,10 @@
     <button @click="goIndex">去首页1</button>
     <navigator url="/pages/list/index?id=1&name=mine1" open-type="navigate">去列表2</navigator>
     <button @click="handleSetStorage">设置storage</button>
+    <view class="iconfont-wrap">
+      <view class="iconfont">&#xe64f;</view>
+      <view class="iconfont">&#xe604;</view>
+    </view>
   </view>
 </template>
 
@@ -44,7 +48,12 @@ export default {
 .mine {
   padding: 0 32rpx;
   navigator {
-      margin: 20rpx 0;
+    margin: 20rpx 0;
+  }
+
+  .iconfont-wrap {
+    margin-top: 40rpx;
+    background-color: #eee;
   }
 }
 </style>
