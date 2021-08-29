@@ -1,6 +1,7 @@
 <template>
   <view class="list">
-    <h1>list页面</h1>
+    <button @click="goIndex">去首页2</button>
+    <navigator url="/pages/mine/index" open-type="switchTab">去我的</navigator>
   </view>
 </template>
 
@@ -10,13 +11,23 @@ export default {
   data() {
     return {};
   },
-  methods: {}
+  methods: {
+    goIndex() {
+      console.log('list goIndex run～～～');
+      uni.reLaunch({
+        url: '/pages/index/index'
+      });
+    }
+  },
+  onLoad(option) {
+    console.log(`list option:`, option);
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .list {
   padding: 0 32rpx;
-  background-color: red;
+  // background-color: red;
 }
 </style>

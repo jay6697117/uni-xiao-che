@@ -1,5 +1,6 @@
 <template>
   <view class="content">
+    <button @click="goList">去列表1</button>
     <image @click="handleClick" class="logo" src="/static/logo.png"></image>
     <view class="text-area">
       <text class="title">{{ title }}</text>
@@ -55,7 +56,8 @@ export default {
       ]
     };
   },
-  onLoad() {
+  onLoad(option) {
+    console.log(`index option:`, option);
     setTimeout(() => {
       console.log('setTimeout run～～～');
       getApp().globalData = { c: 3, d: 4 };
@@ -64,6 +66,12 @@ export default {
   },
   computed: {},
   methods: {
+    goList() {
+      console.log('goList run～～～');
+      uni.redirectTo({
+        url: '/pages/list/index?id=2&name=mine2'
+      });
+    },
     handleClick() {
       this.$store.commit('addKey1');
       uni.showToast({

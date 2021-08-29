@@ -1,7 +1,8 @@
 <template>
   <view class="mine">
-    <button @click="goHome">goList</button>
-    <navigator url="/pages/list/index?id=1&name=mine1">去列表</navigator>
+    <button @click="goIndex">去首页1</button>
+    <navigator url="/pages/list/index?id=1&name=mine1" open-type="navigate">去列表2</navigator>
+    <button @click="handleSetStorage">设置storage</button>
   </view>
 </template>
 
@@ -12,12 +13,29 @@ export default {
     return {};
   },
   methods: {
-    goHome() {
-      console.log('goHome run～～～');
-      uni.navigateTo({
-        url: '/pages/list/index?id=2&name=mine2'
+    handleSetStorage() {
+      try {
+        uni.setStorage({
+          key: 'storage_key1',
+          data: 'hello 111',
+          success() {
+            console.log('setStorage success');
+          }
+        });
+        uni.setStorageSync('storage_key2', 'hello 222');
+      } catch (error) {
+        console.log(`handleSetStorage error:`, error);
+      }
+    },
+    goIndex() {
+      console.log('mine goIndex run～～～');
+      uni.switchTab({
+        url: '/pages/index/index'
       });
     }
+  },
+  onLoad(option) {
+    console.log(`mine option:`, option);
   }
 };
 </script>

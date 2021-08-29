@@ -137,6 +137,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var _default =
 {
   props: {},
@@ -144,12 +145,30 @@ var _default =
     return {};
   },
   methods: {
-    goHome: function goHome() {
-      console.log('goHome run～～～');
-      uni.navigateTo({
-        url: '/pages/list/index?id=2&name=mine2' });
+    handleSetStorage: function handleSetStorage() {
+      try {
+        uni.setStorage({
+          key: 'storage_key1',
+          data: 'hello 111',
+          success: function success() {
+            console.log('setStorage success');
+          } });
 
-    } } };exports.default = _default;
+        uni.setStorageSync('storage_key2', 'hello 222');
+      } catch (error) {
+        console.log("handleSetStorage error:", error);
+      }
+    },
+    goIndex: function goIndex() {
+      console.log('mine goIndex run～～～');
+      uni.switchTab({
+        url: '/pages/index/index' });
+
+    } },
+
+  onLoad: function onLoad(option) {
+    console.log("mine option:", option);
+  } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),

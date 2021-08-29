@@ -18,7 +18,5 @@ export default {
 
 <style lang="scss">
 /*每个页面公共css */
-page {
-  background: #f1f1f1;
-}
+@import './common/css/common.scss';
 </style>

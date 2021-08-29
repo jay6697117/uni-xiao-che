@@ -71,8 +71,8 @@
     "vueVersion" : "2",
     "h5" : {
         "router" : {
-            // "mode" : "history"
-            "mode" : "hash"
+            "mode" : "history"
+            // "mode" : "hash"
         }
     }
 }
