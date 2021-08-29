@@ -29,5 +29,8 @@ export default {
 .list {
   padding: 0 32rpx;
   // background-color: red;
+    navigator {
+      margin: 20rpx 0;
+  }
 }
 </style>

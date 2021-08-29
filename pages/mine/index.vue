@@ -43,5 +43,8 @@ export default {
 <style lang="scss" scoped>
 .mine {
   padding: 0 32rpx;
+  navigator {
+      margin: 20rpx 0;
+  }
 }
 </style>
