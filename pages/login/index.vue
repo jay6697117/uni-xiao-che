@@ -17,8 +17,8 @@ export default {
     }
   },
   methods: {
-    handleLogin(isLogin) {
-      this.$store.commit('login', isLogin);
+    handleLogin(bool) {
+      this.$store.commit('login', bool);
     }
   }
 };
