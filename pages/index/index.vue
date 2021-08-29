@@ -6,8 +6,8 @@
       <text class="title">{{ title }}</text>
     </view>
     <view>globalDataStr: {{ globalDataStr }}</view>
-    <view>key1: {{ $store.state.key1 }}</view>
-    <view>key1Getter: {{ $store.getters.key1Getter }}</view>
+    <view>key1: {{ key1Store }}</view>
+    <view>key1Getter: {{ key1GetterStore }}</view>
     <view class="shop-cart">
       <xc-cart v-for="cartInfo in cartInfos" :key="cartInfo.id" :cartInfo="cartInfo"></xc-cart>
     </view>
@@ -64,7 +64,14 @@ export default {
       this.$store.commit('setKey1', 100);
     }, 5000);
   },
-  computed: {},
+  computed: {
+    key1Store() {
+      return this.$store.state.key1;
+    },
+    key1GetterStore() {
+      return this.$store.getters.key1Getter;
+    }
+  },
   methods: {
     goList() {
       console.log('goList run～～～');
@@ -76,7 +83,7 @@ export default {
       this.$store.commit('addKey1');
       uni.showToast({
         icon: 'loading',
-        title: `globalData: ${JSON.stringify(getApp().globalData)}`,
+        title: `${JSON.stringify(getApp().globalData)}`,
         duration: 1000
       });
     }

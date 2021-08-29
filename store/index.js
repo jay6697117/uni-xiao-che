@@ -4,7 +4,8 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
   state: {
-    key1: 1
+    key1: 1,
+    key1: 1,
   },
   getters: {
     key1Getter: state => `hello: ${state.key1}`
