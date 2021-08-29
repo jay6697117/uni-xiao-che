@@ -23,6 +23,12 @@
       "style": {
         "navigationBarTitleText": "列表"
       }
+    },
+    {
+      "path": "pages/login/login",
+      "style": {
+        "navigationBarTitleText": "登录"
+      }
     }
   ],
   "tabBar": {
