@@ -1,13 +1,16 @@
 <template>
   <view class="content">
     <button @click="goList">去列表1</button>
+    <navigator url="/pages/login/index" open-type="navigate">去登录页</navigator>
+    <view style="width: 400rpx; background: #ccc">登录状态 isLogin: {{ isLogin }}</view>
+    <view style="width: 400rpx; background: #ccc">登录状态 hasLogin: {{ hasLogin }}</view>
     <image @click="handleClick" class="logo" src="/static/logo.png"></image>
     <view class="text-area">
       <text class="title">{{ title }}</text>
     </view>
     <view>globalDataStr: {{ globalDataStr }}</view>
-    <view>key1: {{ key1Store }}</view>
-    <view>key1Getter: {{ key1GetterStore }}</view>
+    <view>key1Store: {{ key1Store }}</view>
+    <view>key1GetterStore: {{ key1GetterStore }}</view>
     <view class="shop-cart">
       <xc-cart v-for="cartInfo in cartInfos" :key="cartInfo.id" :cartInfo="cartInfo"></xc-cart>
     </view>
@@ -15,6 +18,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
   data() {
     return {
@@ -65,6 +69,10 @@ export default {
     }, 5000);
   },
   computed: {
+    ...mapState({
+      isLogin: state => state.isLogin,
+      hasLogin: state => state.isLogin
+    }),
     key1Store() {
       return this.$store.state.key1;
     },
@@ -97,6 +105,10 @@ export default {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+
+  navigator {
+    margin: 20rpx 20rpx 20rpx 0;
+  }
 
   .logo {
     height: 200rpx;

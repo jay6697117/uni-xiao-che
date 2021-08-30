@@ -1,10 +1,12 @@
 <template>
   <view class="login">
-    <!-- <view>登录状态 LoginStatus: {{ LoginStatus }}</view> -->
-    <view>登录状态 isLogin: {{ isLogin }}</view>
-    <view>登录状态 hasLogin: {{ hasLogin }}</view>
+    <view style="background: #ccc">登录状态 isLogin: {{ isLogin }}</view>
+    <view style="background: #ccc">登录状态 hasLogin: {{ hasLogin }}</view>
     <button @click="handleLogin(true)">登录</button>
-    <button @click="handleLogin(false)">退出</button>
+    <button @click="handleLogin(false)">退出登录</button>
+    <view style="padding-top: 16rpx">
+      <navigator url="/pages/index/index" open-type="switchTab">去首页</navigator>
+    </view>
   </view>
 </template>
 
@@ -17,16 +19,12 @@ export default {
   computed: {
     ...mapState({
       isLogin: state => state.isLogin,
-      hasLogin: state => state.hasLogin
-    }),
-    // ...mapState(['isLogin', 'hasLogin'])
-    // LoginStatus() {
-    //   return this.$store.state.isLogin;
-    // }
+      hasLogin: state => state.isLogin
+    })
   },
   methods: {
     handleLogin(bool) {
-      this.$store.commit('login', bool);
+      this.$store.dispatch('setLoginAsync', bool);
     }
   }
 };
@@ -34,6 +32,7 @@ export default {
 
 <style lang="scss" scoped>
 .login {
+  padding: 20rpx;
   background-color: #fff;
   button {
     display: inline-block;
