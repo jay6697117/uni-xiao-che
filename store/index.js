@@ -5,7 +5,8 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     key1: 1,
-    isLogin: false
+    isLogin: false,
+    hasLogin: false,
   },
   getters: {
     key1Getter: state => `hello: ${state.key1}`
@@ -19,6 +20,7 @@ const store = new Vuex.Store({
     },
     login(state, isLogin) {
       state.isLogin = isLogin;
+      state.hasLogin = isLogin;
     }
   }
 });
