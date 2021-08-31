@@ -5,8 +5,8 @@
     <navigator url="/pages/login/index" open-type="navigate">去登录页</navigator>
     <button @click="handleSetStorage">设置storage</button>
     <view class="iconfont-wrap">
-      <view class="iconfont">&#xe64f;</view>
-      <view class="iconfont">&#xe604;</view>
+      <view class="iconfont iconwodedingdan"></view>
+      <view class="iconfont iconcailing"></view>
     </view>
   </view>
 </template>
