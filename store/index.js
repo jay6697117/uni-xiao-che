@@ -5,7 +5,8 @@ Vue.use(Vuex);
 const store = new Vuex.Store({
   state: {
     key1: 1,
-    isLogin: false
+    isLogin: false,
+    count: 0
   },
   getters: {
     key1Getter: state => `hello: ${state.key1}`
@@ -18,8 +19,14 @@ const store = new Vuex.Store({
       state.key1 += 1;
     },
     setLogin(state, bool) {
-      console.log(`setLogin bool:`, bool)
+      console.log(`setLogin bool:`, bool);
       state.isLogin = bool;
+    },
+    addCount(state, val) {
+      state.count += val;
+    },
+    subCount(state, val) {
+      state.count -= val;
     }
   },
   actions: {

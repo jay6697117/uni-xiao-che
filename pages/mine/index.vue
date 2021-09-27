@@ -8,6 +8,14 @@
       <view class="iconfont iconwodedingdan"></view>
       <view class="iconfont iconcailing"></view>
     </view>
+    <view>
+      <view>computed取store中数据结果:{{ count }}</view>
+      <view>直接取store中数据结果:{{ $store.state.count }}</view>
+      <view>
+        <button @tap="add">+</button>
+        <button @tap="sub">-</button>
+      </view>
+    </view>
   </view>
 </template>
 
@@ -17,7 +25,18 @@ export default {
   data() {
     return {};
   },
+  computed: {
+    count() {
+      return this.$store.state.count;
+    }
+  },
   methods: {
+    add() {
+      this.$store.commit('addCount', 100);
+    },
+    sub() {
+      this.$store.commit('subCount', 50);
+    },
     handleSetStorage() {
       try {
         uni.setStorage({
